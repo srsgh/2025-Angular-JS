@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="my_first_ng_app" lang="en">
+<html ng-app="npapp2" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>2025 Angular JS</title>
+    <title>Injector and Filter in AngularJS</title>
   </head>
   <body>
-    This part of View is bound with Angular JS's module using ng-app="app_name"
-    <div ng-controller="my_first_controller_vm">
-      <br /><br />
-      This part of View is bound with Angular JS's controller/View Model using
-      ng-controller="controller_name"
-      <br /><br />
-      Fetching data from JS/VIew Model/ COntroller to here(View/HTML/CSS) using
-      Controller's $scope object<br />
-      Variable Data Value: {{variable_name}}<br />
-      Function Data Value: {{function_name()}}<br /><br />
-      ng-model="$scope_returned_var_or_fn_name" binds my HTML/View's element to
-      Model View/Controller/$Scope data. Changes transfer both ways. Try
-      updating value in input element. you'll notice changes in above rendered
-      $scope.prop value as well:-<br />
-      <input type="text" ng-model="variable_name" />
-      <br /><br />
+    <div ng-controller="controller2">
+      <input type="text" ng-model="name" ng-blur="upper()" />
     </div>
   </body>
 </html>
