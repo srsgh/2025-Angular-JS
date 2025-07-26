@@ -19,15 +19,37 @@
     <button ng-click="sub()">-</button>
     <button ng-click="div()">/</button>
     <button ng-click="mul()">*</button>
-    <button ng-click="save()">Save to history</button><br />
-    <button ng-click="viewHistory()">Show history</button>
-    <button ng-click="hideHistory()">Hide history</button><br />
+    <button ng-click="save()">Save to history</button><br /><br />
+    <button ng-click="viewHistory()">Show Saved history</button>
+    <button ng-click="hideHistory()">Hide history</button><br /><br />
+    <button ng-click="showFullHistory()">Show Full history</button>
+    <button ng-click="hideFullHistory()">Hide Full history</button><br /><br />
+    <div>{{status}}</div>
     <div>
+      Saved History Here: -<br />
       <div ng-repeat="item in historyView">
-        {{item}}<br />
-        {{item.num1}} {{item.op}} {{item.num2}} = {{item.output}}<br />
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
       </div>
     </div>
-    <div>{{status}}</div>
+    <br /><br />
+    <div>
+      Full History Here: -<br />
+      <div ng-repeat="item in fullHistoryView">
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
+      </div>
+    </div>
+    <br /><br />
+    <div>
+        <!---
+      Type +/*-: <input ng-modal="operator" type="text" /><br />
+      Filtered History Here: -<br />
+      <div ng-repeat="item in fullHistoryView | filter : item.op==operator">
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
+      </div>
+    </div>
+    -->
   </body>
 </html>
