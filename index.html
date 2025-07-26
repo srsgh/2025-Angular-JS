@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="ngapp2" lang="en">
+<html lang="en" ng-app="ngapp3">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Injector and Filter in AngularJS</title>
+    <title>Document</title>
   </head>
   <body>
-    <div ng-controller="controller2">
-      This is interpolation Exmaple: <strong>{{name}}</strong><br />
-      ng-blur when input area is not under focus / mouse not over: -
-      <input type="text" ng-model="name" ng-blur="upper()" /><br />
-      Lets add Filter in html directly use this syntax<br />
-      Lets get <strong>{{name2}}</strong> in lowercase" : -<br />
-      <!--{{ js_expression |
-      filter_name : args1 : args2 ...}}-->
-      {{name2|lowercase}}<br />
+    <div ng-controller="controller3">
+      <h3>Digest $digest $scope.$watch</h3>
+      <button ng-click="getScopeService()">Get $scope</button>
+      <!--
+      Increases number of watcher to 1 : {{var1}}<br />
+    -->
+      <button ng-click="setVar1()">Set Var1</button>
+      <button ng-click="IncVar1()">Increase Var1</button>
     </div>
   </body>
 </html>

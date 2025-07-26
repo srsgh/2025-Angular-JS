@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="ngapp2" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Injector and Filter in AngularJS</title>
+  </head>
+  <body>
+    <div ng-controller="controller2">
+      This is interpolation Exmaple: <strong>{{name}}</strong><br />
+      ng-blur when input area is not under focus / mouse not over: -
+      <input type="text" ng-model="name" ng-blur="upper()" /><br />
+      Lets add Filter in html directly use this syntax<br />
+      Lets get <strong>{{name2}}</strong> in lowercase" : -<br />
+      <!--{{ js_expression |
+      filter_name : args1 : args2 ...}}-->
+      {{name2|lowercase}}<br />
+      Now we're trying custom JS Filter in angular Lets change first to second:
+      -<br />
+      first:
+      <input type="text" ng-model="sayMessage1" /><br />
+      second: {{saymessageOp}}<br />
+    </div>
+  </body>
+</html>

@@ -1,20 +1,31 @@
 (function () {
   "use strict";
-  //angular injector
-  angular.module("ngapp2", []).controller("controller2", ControllerFn);
+  //This is going to use $scope.$watch & Digest cycle conecpt $digest, for every change digest cycle runs atleas twice over the watchers
+  angular.module("ngapp3", []).controller("controller3", Controller3);
+  Controller3.$inject = ["$scope"];
+  function Controller3($scope) {
+    $scope.var1 = 0;
+    console.log("Lets see $scope");
+    console.log($scope);
 
-  //Below Line is for Minification: -
-  // ControllerFn.$injector = ["$scope", "$filter"];
-  function ControllerFn($scope, $filter, $injector) {
-    $scope.name = "ShibYu";
-    $scope.name2 = "DoberMAn";
-    $scope.upper = function () {
-      //$filter('upperacase')
-      // var upcase = $filter("uppercase");
-      // $scope.name = upcase($scope.name);
-      $scope.name = $filter("uppercase")($scope.name);
+    $scope.getScopeService = function () {
+      console.log("Lets see $scope");
+      console.log($scope.$$watchersCount);
     };
-    //notes end- $injector.annnotate heps pick services - i.e. $xxx up in a contorller fn
-    console.log($injector.annotate(ControllerFn));
+
+    $scope.setVar1 = function () {
+      $scope.var1 = 1;
+      console.log("Lets see $scope");
+      //   console.log($scope.$$watchersCount);
+    };
+    $scope.$watch("var1", function (newVal, oldVal) {
+      console.log("newVal:" + newVal);
+      console.log("oldVal:" + oldVal);
+    });
+
+    $scope.IncVar1 = function () {
+      $scope.var1 = $scope.var1 + 1;
+      //   console.log($scope.$$watchersCount);
+    };
   }
 })();
