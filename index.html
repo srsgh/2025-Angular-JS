@@ -11,6 +11,7 @@
     <div ng-controller="controller3">
       <h3>Digest $digest $scope.$watch</h3>
       <button ng-click="getScopeService()">Get $scope</button>
+      Interpolation fires Digest Loops and watcher update
       <!--
       Increases number of watcher to 1 : {{var1}}<br />
     -->
@@ -19,3 +20,9 @@
     </div>
   </body>
 </html>
+<!--
+AngJS Digest Loop fires only if events happen in AngJS context i.e. rel to $scope. Ways to set watcher :-
+1. {{var_name}}
+2. <input ng-model="var_name">
+3. $scope.$watch
+-->
