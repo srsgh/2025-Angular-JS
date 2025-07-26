@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ngapp3">
+<html lang="en" ng-app="ngapprepeat">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Document</title>
+    <title>ng-repeat</title>
   </head>
-  <body>
-    <div ng-controller="controller3">
-      <h3>Digest $digest $scope.$watch</h3>
-      <button ng-click="getScopeService()">Get $scope</button>
-      Interpolation fires Digest Loops and watcher update
-      <!--
-      Increases number of watcher to 1 : {{var1}}<br />
-    -->
-      <button ng-click="setVar1()">Set Var1</button>
-      <button ng-click="IncVar1()">Increase Var1</button>
-      {{var1}}
+  <h1>Calculator(Repeat)</h1>
+  <body ng-controller="controllerRepeat">
+    Current Numbers:-<br />
+    Number 1: {{num1}} Number 2: {{num2}}
+    <br />
+    Output : {{output}}<br /><br />
+    Input 1: <input ng-model="num1" type="number" /> <br />
+    Input 2: <input ng-model="num2" type="number" /><br /><br />
+    <button ng-click="add()">+</button>
+    <button ng-click="sub()">-</button>
+    <button ng-click="div()">/</button>
+    <button ng-click="mul()">*</button>
+    <button ng-click="save()">Save to history</button><br />
+    <button ng-click="viewHistory()">Show history</button>
+    <button ng-click="hideHistory()">Hide history</button><br />
+    <div>
+      <div ng-repeat="item in historyView">
+        {{item}}<br />
+        {{item.num1}} {{item.op}} {{item.num2}} = {{item.output}}<br />
+      </div>
     </div>
+    <div>{{status}}</div>
   </body>
 </html>
-<!--
-AngJS Digest Loop fires only if events happen in AngJS context i.e. rel to $scope. Ways to set watcher :-
-1. {{var_name}}
-2. <input ng-model="var_name">
-3. $scope.$watch
--->

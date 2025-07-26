@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngapp3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-controller="controller3">
+      <h3>Digest $digest $scope.$watch</h3>
+      <button ng-click="getScopeService()">Get $scope</button>
+      Interpolation fires Digest Loops and watcher update
+      <!--
+      Increases number of watcher to 1 : {{var1}}<br />
+    -->
+      <button ng-click="setVar1()">Set Var1</button>
+      <button ng-click="IncVar1()">Increase Var1</button>
+      {{var1}}
+    </div>
+  </body>
+</html>
+<!--
+AngJS Digest Loop fires only if events happen in AngJS context i.e. rel to $scope. Ways to set watcher :-
+1. {{var_name}}
+2. <input ng-model="var_name">
+3. $scope.$watch
+-->
