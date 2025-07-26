@@ -18,6 +18,7 @@
       console.log("Lets see $scope");
       //   console.log($scope.$$watchersCount);
     };
+    //set up a watch for var1 and add a function for new and old values
     $scope.$watch("var1", function (newVal, oldVal) {
       console.log("newVal:" + newVal);
       console.log("oldVal:" + oldVal);
