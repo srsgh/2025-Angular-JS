@@ -26,6 +26,12 @@
 
     $scope.IncVar1 = function () {
       $scope.var1 = $scope.var1 + 1;
+      setTimeout(function () {
+        console.log(" delay increment");
+        $scope.var1 = $scope.var1 + 10;
+        //since seTimeout is non angjs we need $digest to be called for rendering the UI for it
+        $scope.$digest();
+      }, 3000);
       //   console.log($scope.$$watchersCount);
     };
   }
