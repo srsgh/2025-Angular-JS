@@ -9,7 +9,14 @@
   </head>
   <body>
     <div ng-controller="controller2">
-      <input type="text" ng-model="name" ng-blur="upper()" />
+      This is interpolation Exmaple: <strong>{{name}}</strong><br />
+      ng-blur when input area is not under focus / mouse not over: -
+      <input type="text" ng-model="name" ng-blur="upper()" /><br />
+      Lets add Filter in html directly use this syntax<br />
+      Lets get <strong>{{name2}}</strong> in lowercase" : -<br />
+      <!--{{ js_expression |
+      filter_name : args1 : args2 ...}}-->
+      {{name2|lowercase}}<br />
     </div>
   </body>
 </html>
