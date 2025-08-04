@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngapprepeat">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>ng-repeat</title>
+  </head>
+  <h1>Calculator(Repeat)</h1>
+  <body ng-controller="controllerRepeat">
+    Current Numbers:-<br />
+    Number 1: {{num1}} Number 2: {{num2}}
+    <br />
+    Output : {{output}}<br /><br />
+    Input 1: <input ng-model="num1" type="number" /> <br />
+    Input 2: <input ng-model="num2" type="number" /><br /><br />
+    <button ng-click="add()">+</button>
+    <button ng-click="sub()">-</button>
+    <button ng-click="div()">/</button>
+    <button ng-click="mul()">*</button>
+    <button ng-click="save()">Save to history</button><br /><br />
+    <button ng-click="viewHistory()">Show Saved history</button>
+    <button ng-click="hideHistory()">Hide history</button><br /><br />
+    <button ng-click="showFullHistory()">Show Full history</button>
+    <button ng-click="hideFullHistory()">Hide Full history</button><br /><br />
+    <div>{{status}}</div>
+    <div>
+      Saved History Here: -<br />
+      <div ng-repeat="item in historyView">
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
+      </div>
+    </div>
+    <br /><br />
+    <div>
+      Full History Here: -<br />
+      <div ng-repeat="item in fullHistoryView">
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
+      </div>
+    </div>
+    <br /><br />
+    <div>
+        <!---
+      Type +/*-: <input ng-modal="operator" type="text" /><br />
+      Filtered History Here: -<br />
+      <div ng-repeat="item in fullHistoryView | filter : item.op==operator">
+        {{$index+1}} : {{item.num1}} {{item.op}} {{item.num2}} =
+        {{item.output}}<br />
+      </div>
+    </div>
+    -->
+  </body>
+</html>
