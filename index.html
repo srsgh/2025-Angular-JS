@@ -8,14 +8,16 @@
     <title>Controller as Syntax</title>
   </head>
   <body>
-    Controller as lets child to not mask same name properties of parent<br />
+    <strong>
+      Controller as lets child to not mask same name properties of parent<br />
+    </strong>
     Parent<br />
     <div ng-controller="Controller1 as parent">
-      {{parent.value}}
+      PARENT : {{parent.value}}
       <div ng-controller="Controller2 as child">
         Child<br />
-        {{child.value}}<br />
-        {{parent.value}}
+        CHILD : {{child.value}}<br />
+        PARENT : {{parent.value}}
       </div>
     </div>
   </body>
