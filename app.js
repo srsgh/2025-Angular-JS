@@ -4,6 +4,7 @@
     .module("ngapp5", [])
     .controller("Controller1", ControllerFn1)
     .controller("Controller2", ControllerFn2);
+  //.service('ServiceName',ServiceFnCtor) produces singleton obj is based on singleton design principle & lazy loads. For sharing btw controllers. we inject it into the controller fn ctor
   ControllerFn1.$inject = ["$scope"];
   function ControllerFn1($scope) {
     //any property on this is accessible by parent from html
